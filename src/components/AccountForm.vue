@@ -48,7 +48,7 @@ export default {
       async handleSubmit() {
         try {
           await accountService.editAccount(editable.value)
-          router.push({name: 'Profile', params: { profileId: editable.value.id}})
+          router.push({ name: 'Profile', params: { profileId: editable.value.id } })
         } catch (error) {
           logger.error('[handling submit]', error)
           Pop.error(error)

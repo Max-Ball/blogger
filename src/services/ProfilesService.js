@@ -5,9 +5,9 @@ import { bcwSandbox } from "./AxiosService.js"
 
 
 class ProfilesService {
-    async getProfileById(id){
+    async getProfileById(id) {
         const res = await bcwSandbox.get(`api/profiles/${id}`)
-        logger.log('get profile by id',res.data)
+        logger.log('get profile by id', res.data)
         AppState.activeProfile = new Profile(res.data)
     }
 }
