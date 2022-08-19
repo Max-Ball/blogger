@@ -42,16 +42,16 @@ export default {
     setup(props) {
         return {
             account: computed(() => AppState.account),
-            // async deleteBlog(blog) {
-            //     try {
-            //         const yes = await Pop.confirm('Delete the car?')
-            //         if (!yes) { return }
-            //         await blogsService.deleteBlog(blog.id)
-            //     } catch (error) {
-            //         logger.error('[deleting blog]', error)
-            //         Pop.error(error)
-            //     }
-            // }
+            async deleteBlog(blog) {
+                try {
+                    const yes = await Pop.confirm('Delete the car?')
+                    if (!yes) { return }
+                    await blogsService.deleteBlog(blog.id)
+                } catch (error) {
+                    logger.error('[deleting blog]', error)
+                    Pop.error(error)
+                }
+            }
 
         }
     }
